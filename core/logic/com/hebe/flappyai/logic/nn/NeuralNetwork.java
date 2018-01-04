@@ -37,7 +37,22 @@ public class NeuralNetwork implements Serializable{
 		}
 
 		return outputs;
+	}
+	
 
+
+	public double[][] showProcessing(double[] inputs) {
+		if (inputs.length != this.layers[0].neuronCount)
+			System.err.println("Given inputs do not match network input amount.");
+
+		double[][] activations = new double[this.layers.length][];
+		double[] outputs = inputs;
+		for (int i = 0; i < this.layers.length; i++) {
+			outputs = this.layers[i].processInputs(outputs);
+			activations[i] = outputs;
+		}
+
+		return activations;
 	}
 	
 	public void setRandomWeights(double minValue, double maxValue) {
@@ -71,7 +86,7 @@ public class NeuralNetwork implements Serializable{
 	}
 
 	public void mutate(float value) {
-		for(NeuralLayer layer : layers) {
+		for(NeuralLayer layer : this.layers) {
 			layer.mutate(value);
 		}
 	}

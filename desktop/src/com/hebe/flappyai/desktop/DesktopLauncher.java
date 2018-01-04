@@ -9,8 +9,8 @@ import com.hebe.flappyai.FlappyAI;
 
 public class DesktopLauncher {
 
-	public static int WIDTH = 900;
-	public static int HEIGHT = 1600;
+	public static int WIDTH = 504;
+	public static int HEIGHT = 896;
 
 	public static void main(String[] arg) {
 		Toolkit tk = Toolkit.getDefaultToolkit();
@@ -20,7 +20,7 @@ public class DesktopLauncher {
 		config.width = WIDTH;
 		config.height = HEIGHT;
 		config.x = d.width / 2 - WIDTH / 2;
-		config.y = d.height / 2 - HEIGHT / 2;
+		config.y = 0;
 		config.fullscreen = false;
 		config.vSyncEnabled = false; // Setting to false disables vertical sync
 		config.foregroundFPS = 0; // Setting to 0 disables foreground fps throttling

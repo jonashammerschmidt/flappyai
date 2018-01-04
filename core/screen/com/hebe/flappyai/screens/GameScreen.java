@@ -2,8 +2,8 @@
 package com.hebe.flappyai.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -73,13 +73,13 @@ public class GameScreen implements Screen{
 		Gdx.gl.glEnable(GL20.GL_BLEND);
 		Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 
-		this.world.render(this.game.getSpriteBatch(), this.game.getShapeRenderer());
+		this.world.render(this.game.getSpriteBatch(), this.game.getShapeRenderer(), this.game.getFont());
 		
 		// Attach Viewport to SpriteBatch and Shaperenderer
 		this.game.getSpriteBatch().setProjectionMatrix(this.hudViewport.getCamera().combined);
 		this.game.getShapeRenderer().setProjectionMatrix(this.hudViewport.getCamera().combined);
 
-		this.hud.draw(this.game.getSpriteBatch(), this.game.getShapeRenderer(), this.game.getFont());
+		//this.hud.draw(this.game.getSpriteBatch(), this.game.getShapeRenderer(), this.game.getFont());
 		
 		Gdx.gl.glDisable(GL20.GL_BLEND);
 
